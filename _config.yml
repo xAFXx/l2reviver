@@ -1,0 +1,9 @@
+title: L2ReviverBot
+description: "Revolutionary automation platform for Lineage 2"
+theme: null
+url: "https://l2reviver.net"
+plugins:
+  - jekyll-seo-tag
+exclude:
+  - Gemfile
+  - Gemfile.lock
