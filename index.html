@@ -13,6 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@500;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
     <!-- Open Graph / Facebook -->
@@ -48,6 +49,11 @@
                 <a href="#cta" class="btn-primary glow-effect open-download-modal" data-i18n="nav_start">Начать
                     Сейчас</a>
             </nav>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="header-lang-switcher">
                 <button class="header-lang-btn" data-lang="ua">UA</button>
                 <button class="header-lang-btn" data-lang="en">EN</button>
@@ -55,6 +61,21 @@
             </div>
         </div>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <button class="mobile-menu-close">&times;</button>
+        <nav class="mobile-nav">
+            <a href="#features" class="mobile-nav-link" data-i18n="nav_features">Возможности</a>
+            <a href="#integration" class="mobile-nav-link" data-i18n="nav_integration">Интеграция</a>
+            <a href="#cta" class="mobile-nav-link open-download-modal" data-i18n="nav_start">Начать Сейчас</a>
+            <div class="mobile-lang-switcher">
+                <button class="header-lang-btn" data-lang="ua">UA</button>
+                <button class="header-lang-btn" data-lang="en">EN</button>
+                <button class="header-lang-btn" data-lang="ru">RU</button>
+            </div>
+        </nav>
+    </div>
 
     <main>
         <section id="hero-section" class="hero-section">

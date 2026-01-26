@@ -276,6 +276,43 @@ function applyConfig() {
     }
 }
 
+// Mobile Menu Logic
+function setupMobileMenu() {
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+    const closeBtn = document.querySelector('.mobile-menu-close');
+
+    if (!menuToggle || !mobileOverlay) return;
+
+    const toggleMenu = () => {
+        menuToggle.classList.toggle('active');
+        mobileOverlay.classList.toggle('active');
+        document.body.style.overflow = mobileOverlay.classList.contains('active') ? 'hidden' : '';
+    };
+
+    const closeMenu = () => {
+        menuToggle.classList.remove('active');
+        mobileOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    menuToggle.addEventListener('click', toggleMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+    // Close menu when clicking on a link
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Close menu when clicking outside
+    mobileOverlay.addEventListener('click', (e) => {
+        if (e.target === mobileOverlay) {
+            toggleMenu();
+        }
+    });
+}
+
 // Modal Logic
 function setupModal() {
     const modal = document.getElementById('download-modal');
@@ -346,6 +383,7 @@ function setupModal() {
 document.addEventListener('DOMContentLoaded', () => {
     applyConfig();
     setupModal();
+    setupMobileMenu();
     const savedLang = localStorage.getItem('selectedLanguage');
 
     // Function to handle language selection
