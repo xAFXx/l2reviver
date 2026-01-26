@@ -45,7 +45,8 @@
             <nav>
                 <a href="#features" class="nav-link" data-i18n="nav_features">Возможности</a>
                 <a href="#integration" class="nav-link" data-i18n="nav_integration">Интеграция</a>
-                <a href="#cta" class="btn-primary glow-effect" data-i18n="nav_start">Начать Сейчас</a>
+                <a href="#cta" class="btn-primary glow-effect open-download-modal" data-i18n="nav_start">Начать
+                    Сейчас</a>
             </nav>
             <div class="header-lang-switcher">
                 <button class="header-lang-btn" data-lang="ua">UA</button>
@@ -65,7 +66,8 @@
                     профессиональному софту.
                 </p>
                 <div class="hero-actions fade-in-up delay-2">
-                    <a href="#" class="btn-primary btn-large glow-effect" data-i18n="hero_btn_primary">Попробовать
+                    <a href="#" class="btn-primary btn-large glow-effect open-download-modal"
+                        data-i18n="hero_btn_primary">Попробовать
                         Бесплатно</a>
                     <a href="#features" class="btn-secondary btn-large" data-i18n="hero_btn_secondary">Узнать Больше</a>
                 </div>
@@ -176,7 +178,8 @@
                     <p class="cta-text" data-i18n="cta_text">L2ReviverBot превращает Lineage 2 из работы в удовольствие.
                         Минимум усилий,
                         максимум профита.</p>
-                    <a href="#" class="btn-primary btn-large glow-effect" data-i18n="cta_btn">Получить Бот</a>
+                    <a href="#" class="btn-primary btn-large glow-effect open-download-modal"
+                        data-i18n="cta_btn">Получить Бот</a>
                 </div>
             </div>
         </section>
@@ -221,6 +224,44 @@
     <script src="assets/js/video-scroll.js"></script>
     <script src="assets/js/config.js"></script>
     <script src="assets/js/localization.js"></script>
+
+    <!-- Download Modal -->
+    <div id="download-modal" class="modal-overlay">
+        <div class="modal-content glass-panel">
+            <button class="modal-close">&times;</button>
+
+            <!-- Main View -->
+            <div class="modal-view" id="modal-main-view">
+                <h2 class="modal-title" data-i18n="modal_title">Выберите платформу</h2>
+                <div class="download-options">
+                    <a href="#" class="download-btn glass-panel">
+                        <span class="icon">💻</span>
+                        <span data-i18n="modal_desktop">Desktop</span>
+                    </a>
+                    <button class="download-btn glass-panel" id="show-mobile-options">
+                        <span class="icon">📱</span>
+                        <span data-i18n="modal_mobile">Android / iOS</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Sub-view -->
+            <div class="modal-view hidden" id="modal-mobile-view">
+                <button class="modal-back">← <span data-i18n="modal_back">Назад</span></button>
+                <h2 class="modal-title" data-i18n="modal_mobile_title">Выберите платформу</h2>
+                <div class="download-options">
+                    <a href="#" class="download-btn glass-panel">
+                        <span class="icon">🤖</span>
+                        <span data-i18n="modal_android">Android</span>
+                    </a>
+                    <a href="#" class="download-btn glass-panel">
+                        <span class="icon">🍎</span>
+                        <span data-i18n="modal_ios">iOS</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

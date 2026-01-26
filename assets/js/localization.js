@@ -50,7 +50,14 @@ const translations = {
         "footer_email": "Наш Email",
         "footer_donation": "Донат",
         "footer_donation_desc": "Поддержите развитие проекта Л2",
-        "footer_rights": "© 2026 L2ReviverBot. All rights reserved."
+        "footer_rights": "© 2026 L2ReviverBot. All rights reserved.",
+        "modal_title": "Выберите платформу",
+        "modal_desktop": "Desktop",
+        "modal_mobile": "Android / iOS",
+        "modal_mobile_title": "Выберите платформу",
+        "modal_android": "Android",
+        "modal_ios": "iOS",
+        "modal_back": "Назад"
     },
     "ua": {
         "title": "L2ReviverBot | Твій ідеальний помічник у Lineage 2",
@@ -103,7 +110,14 @@ const translations = {
         "footer_email": "Наш Email",
         "footer_donation": "Донат",
         "footer_donation_desc": "Підтримайте розвиток проекту Л2",
-        "footer_rights": "© 2026 L2ReviverBot. All rights reserved."
+        "footer_rights": "© 2026 L2ReviverBot. All rights reserved.",
+        "modal_title": "Оберіть платформу",
+        "modal_desktop": "Desktop",
+        "modal_mobile": "Android / iOS",
+        "modal_mobile_title": "Оберіть платформу",
+        "modal_android": "Android",
+        "modal_ios": "iOS",
+        "modal_back": "Назад"
     },
     "en": {
         "title": "L2ReviverBot | Your ideal assistant in Lineage 2",
@@ -156,7 +170,14 @@ const translations = {
         "footer_email": "Our Email",
         "footer_donation": "Donation",
         "footer_donation_desc": "Support the development of L2 project",
-        "footer_rights": "© 2026 L2ReviverBot. All rights reserved."
+        "footer_rights": "© 2026 L2ReviverBot. All rights reserved.",
+        "modal_title": "Select platform",
+        "modal_desktop": "Desktop",
+        "modal_mobile": "Android / iOS",
+        "modal_mobile_title": "Select platform",
+        "modal_android": "Android",
+        "modal_ios": "iOS",
+        "modal_back": "Back"
     }
 };
 
@@ -255,9 +276,76 @@ function applyConfig() {
     }
 }
 
+// Modal Logic
+function setupModal() {
+    const modal = document.getElementById('download-modal');
+    const closeBtn = document.querySelector('.modal-close');
+    const openBtns = document.querySelectorAll('.open-download-modal');
+    const mainView = document.getElementById('modal-main-view');
+    const mobileView = document.getElementById('modal-mobile-view');
+    const showMobileBtn = document.getElementById('show-mobile-options');
+    const backBtn = document.querySelector('.modal-back');
+    const downloadBtns = document.querySelectorAll('.download-btn[href]');
+
+    if (!modal || !closeBtn) return;
+
+    const openModal = (e) => {
+        e.preventDefault();
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        // Reset to main view
+        mainView.classList.remove('hidden');
+        mobileView.classList.add('hidden');
+    };
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    const showMobileOptions = () => {
+        mainView.classList.add('hidden');
+        mobileView.classList.remove('hidden');
+    };
+
+    const showMainView = () => {
+        mobileView.classList.add('hidden');
+        mainView.classList.remove('hidden');
+    };
+
+    const handleDownload = (e) => {
+        // If href is "#", prevent default and close modal
+        // In production, replace "#" with actual download URLs
+        if (e.currentTarget.getAttribute('href') === '#') {
+            e.preventDefault();
+        }
+        // Close modal after initiating download
+        closeModal();
+    };
+
+    openBtns.forEach(btn => btn.addEventListener('click', openModal));
+    closeBtn.addEventListener('click', closeModal);
+    if (showMobileBtn) showMobileBtn.addEventListener('click', showMobileOptions);
+    if (backBtn) backBtn.addEventListener('click', showMainView);
+
+    // Add click handlers to all download buttons
+    downloadBtns.forEach(btn => btn.addEventListener('click', handleDownload));
+
+    // Close on click outside content
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+    });
+}
+
 // Init
 document.addEventListener('DOMContentLoaded', () => {
     applyConfig();
+    setupModal();
     const savedLang = localStorage.getItem('selectedLanguage');
 
     // Function to handle language selection
