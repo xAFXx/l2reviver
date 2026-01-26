@@ -224,8 +224,34 @@ function detectLanguage() {
     return 'en'; // Default
 }
 
+// Config Hydration
+function applyConfig() {
+    const config = window.CONFIG;
+    if (!config) return;
+
+    const mappings = {
+        'footer-discord-link': config.links.discord,
+        'footer-telegram-link': config.links.telegram,
+        'footer-support-link': config.links.support,
+        'footer-email-link': config.links.email,
+        'footer-donation-addr': config.donation.usdt_trc20
+    };
+
+    for (const [id, value] of Object.entries(mappings)) {
+        const el = document.getElementById(id);
+        if (el) {
+            if (el.tagName === 'A') {
+                el.href = value;
+            } else {
+                el.textContent = value;
+            }
+        }
+    }
+}
+
 // Init
 document.addEventListener('DOMContentLoaded', () => {
+    applyConfig();
     const savedLang = localStorage.getItem('selectedLanguage');
 
     // Function to handle language selection
