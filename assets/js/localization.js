@@ -41,7 +41,14 @@ const translations = {
         "cta_title_end": "Сегодня",
         "cta_text": "L2ReviverBot превращает Lineage 2 из работы в удовольствие. Минимум усилий, максимум профита.",
         "cta_btn": "Получить Бот",
-        "footer_rights": "© 2024 L2ReviverBot. All rights reserved."
+        "footer_contacts": "Контакты",
+        "footer_telegram": "Наш Telegram",
+        "footer_support": "Техподдержка",
+        "footer_discord": "Наш Discord",
+        "footer_email": "Наш Email",
+        "footer_donation": "Донат",
+        "footer_donation_desc": "Поддержите развитие проекта Л2",
+        "footer_rights": "© 2026 L2ReviverBot. All rights reserved."
     },
     "ua": {
         "title": "L2ReviverBot | Твій ідеальний помічник у Lineage 2",
@@ -85,7 +92,14 @@ const translations = {
         "cta_title_end": "Сьогодні",
         "cta_text": "L2ReviverBot перетворює Lineage 2 з роботи на задоволення. Мінімум зусиль, максимум профіту.",
         "cta_btn": "Отримати Бот",
-        "footer_rights": "© 2024 L2ReviverBot. All rights reserved."
+        "footer_contacts": "Контакти",
+        "footer_telegram": "Наш Telegram",
+        "footer_support": "Техпідтримка",
+        "footer_discord": "Наш Discord",
+        "footer_email": "Наш Email",
+        "footer_donation": "Донат",
+        "footer_donation_desc": "Підтримайте розвиток проекту Л2",
+        "footer_rights": "© 2026 L2ReviverBot. All rights reserved."
     },
     "en": {
         "title": "L2ReviverBot | Your ideal assistant in Lineage 2",
@@ -129,7 +143,14 @@ const translations = {
         "cta_title_end": "Today",
         "cta_text": "L2ReviverBot turns Lineage 2 from work into pleasure. Minimum effort, maximum profit.",
         "cta_btn": "Get Bot",
-        "footer_rights": "© 2024 L2ReviverBot. All rights reserved."
+        "footer_contacts": "Contacts",
+        "footer_telegram": "Our Telegram",
+        "footer_support": "Support Service",
+        "footer_discord": "Our Discord",
+        "footer_email": "Our Email",
+        "footer_donation": "Donation",
+        "footer_donation_desc": "Support the development of L2 project",
+        "footer_rights": "© 2026 L2ReviverBot. All rights reserved."
     }
 };
 

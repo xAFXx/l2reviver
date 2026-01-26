@@ -13,6 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@500;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -38,7 +39,8 @@
     <header class="glass-header">
         <div class="container nav-container">
             <a href="#hero-section" class="logo-link">
-                <div class="logo">L2Reviver<span class="accent-text">Bot</span></div>
+                <div class="logo"><span class="accent-text">L2</span>Reviver<span
+                        class="secondary-accent-text">Bot</span></div>
             </a>
             <nav>
                 <a href="#features" class="nav-link" data-i18n="nav_features">Возможности</a>
@@ -174,10 +176,38 @@
         </section>
     </main>
 
-    <footer>
-        <div class="container footer-content">
-            <div class="logo-small">L2ReviverBot</div>
-            <p data-i18n="footer_rights">&copy; 2024 L2ReviverBot. All rights reserved.</p>
+    <footer class="glass-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo-small"><span class="accent-text">L2</span>Reviver<span
+                        class="secondary-accent-text">Bot</span></div>
+                <p class="copyright" data-i18n="footer_rights">&copy; 2026 L2ReviverBot. All rights reserved.</p>
+            </div>
+
+            <div class="footer-block">
+                <h4 data-i18n="footer_contacts">Контакты</h4>
+                <ul class="footer-links">
+                    <li><a href="https://t.me/L2Reviver" target="_blank"><span class="icon">✈️</span> <span
+                                data-i18n="footer_telegram">Наш Telegram</span></a></li>
+                    <li><a href="https://t.me/L2ReviverSupport" target="_blank"><span class="icon">💬</span> <span
+                                data-i18n="footer_support">Техподдержка</span></a></li>
+                    <li><a href="https://discord.gg/L2Reviver" target="_blank"><span class="icon">🎮</span> <span
+                                data-i18n="footer_discord">Наш Discord</span></a></li>
+                    <li><a href="mailto:support@l2reviver.com"><span class="icon">📧</span> <span
+                                data-i18n="footer_email">Наш Email</span></a></li>
+                </ul>
+            </div>
+
+            <div class="footer-block">
+                <h4 data-i18n="footer_donation">Донат</h4>
+                <p class="donation-text" data-i18n="footer_donation_desc">Поддержите развитие проекта Л2</p>
+                <div class="donation-box">
+                    <div class="crypto-addr" title="Click to copy">
+                        <span class="crypto-label">USDT (TRC20):</span>
+                        <code>TExexampleAddressPlaceholder12345</code>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 
