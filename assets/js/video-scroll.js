@@ -1,73 +1,99 @@
-const { fromEvent, merge, animationFrames, map, scan, distinctUntilChanged, filter } = rxjs;
+const { fromEvent, merge, animationFrames, map, scan, distinctUntilChanged, filter, tap } = rxjs;
 
 document.addEventListener('DOMContentLoaded', () => {
-    const video = document.getElementById('bg-video');
-    if (!video) return;
+    const videoForward = document.getElementById('bg-video-forward');
+    const videoBackward = document.getElementById('bg-video-backward');
 
-    let duration = 0;
+    if (!videoForward || !videoBackward) return;
+
+    let forwardDuration = 0;
+    let backwardDuration = 0;
     const lerpAmount = 0.08;
-    let isSeeking = false;
 
-    const getTargetTime = () => {
+    let currentDir = 'forward'; // 'forward' or 'backward'
+    let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+    const getScrollPercent = () => {
         const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
         const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
         const maxScroll = scrollHeight - window.innerHeight;
-        if (maxScroll <= 0 || duration <= 0) return 0;
-        return (scrollPosition / maxScroll) * duration;
+        return maxScroll > 0 ? Math.min(Math.max(scrollPosition / maxScroll, 0), 1) : 0;
     };
 
-    video.addEventListener('seeking', () => { isSeeking = true; });
-    video.addEventListener('seeked', () => { isSeeking = false; });
+    const updateDurations = () => {
+        if (videoForward.duration) forwardDuration = videoForward.duration;
+        if (videoBackward.duration) backwardDuration = videoBackward.duration;
+    };
 
-    if (video.duration && !isNaN(video.duration)) {
-        duration = video.duration;
-    }
-
-    const metadata$ = fromEvent(video, 'loadedmetadata').pipe(map(() => video.duration));
     const scroll$ = fromEvent(window, 'scroll', { passive: true });
     const resize$ = fromEvent(window, 'resize');
+    const metaF$ = fromEvent(videoForward, 'loadedmetadata');
+    const metaB$ = fromEvent(videoBackward, 'loadedmetadata');
 
-    let targetTime = getTargetTime();
+    let targetPercent = getScrollPercent();
 
-    merge(scroll$, resize$, metadata$).subscribe(() => {
-        if (!duration && video.duration) duration = video.duration;
-        targetTime = getTargetTime();
+    merge(scroll$, resize$, metaF$, metaB$).subscribe(() => {
+        updateDurations();
+        const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Detect direction
+        if (currentScrollY > lastScrollY) {
+            currentDir = 'forward';
+        } else if (currentScrollY < lastScrollY) {
+            currentDir = 'backward';
+        }
+        lastScrollY = currentScrollY;
+        targetPercent = getScrollPercent();
+
+        // Switch active video classes
+        if (currentDir === 'forward') {
+            videoForward.classList.add('active');
+            videoBackward.classList.remove('active');
+        } else {
+            videoBackward.classList.add('active');
+            videoForward.classList.remove('active');
+        }
     });
 
+    // Animation frame stream for syncing
     animationFrames().pipe(
-        // Ensure metadata is ready
-        filter(() => video.readyState >= 1 && duration > 0)
+        filter(() => forwardDuration > 0 && backwardDuration > 0)
     ).subscribe(() => {
-        const currentTime = video.currentTime;
-        const diff = targetTime - currentTime;
+        // Calculate target times for both videos
+        // Forward: 0 to duration
+        // Backward: duration to 0 (assuming reverse file starts with end frame at 0s)
+        const targetTimeF = targetPercent * forwardDuration;
+        const targetTimeB = (1 - targetPercent) * backwardDuration;
 
-        // Forward motion: Use native play() for maximum smoothness
-        if (diff > 0.05) {
-            // Adjust playbackRate based on distance to catch up
-            // Scaling from 1x to 4x depending on how far we are
-            const rate = Math.min(Math.max(diff * 5, 1), 4);
-            video.playbackRate = rate;
+        const activeVideo = currentDir === 'forward' ? videoForward : videoBackward;
+        const inactiveVideo = currentDir === 'forward' ? videoBackward : videoForward;
+        const activeTargetTime = currentDir === 'forward' ? targetTimeF : targetTimeB;
+        const inactiveTargetTime = currentDir === 'forward' ? targetTimeB : targetTimeF;
 
-            if (video.paused) {
-                video.play().catch(() => { });
+        // Update active video
+        const diff = activeTargetTime - activeVideo.currentTime;
+        if (Math.abs(diff) > 0.05) {
+            if (diff > 0) {
+                // Moving forward in the current video's timeline
+                const rate = Math.min(Math.max(diff * 5, 1), 5);
+                activeVideo.playbackRate = rate;
+                if (activeVideo.paused) activeVideo.play().catch(() => { });
+            } else {
+                // This shouldn't happen much with two videos, but just in case
+                activeVideo.pause();
+                activeVideo.currentTime = activeVideo.currentTime + diff * lerpAmount;
             }
+        } else {
+            if (!activeVideo.paused) activeVideo.pause();
+            activeVideo.playbackRate = 1;
         }
-        // Backward motion or near target: Use seeking/Lerp
-        else if (diff < -0.05) {
-            video.pause();
-            if (!isSeeking) {
-                // Smoothly scrub backwards
-                video.currentTime = currentTime + (diff * lerpAmount);
-            }
-        }
-        // Very close to target: Maintain position
-        else {
-            if (!video.paused) {
-                video.pause();
-            }
-            video.playbackRate = 1;
+
+        // Keep inactive video in sync (seeking is fine here since it's hidden)
+        if (Math.abs(inactiveVideo.currentTime - inactiveTargetTime) > 0.1) {
+            inactiveVideo.currentTime = inactiveTargetTime;
         }
     });
 
-    video.load();
+    videoForward.load();
+    videoBackward.load();
 });

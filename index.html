@@ -25,28 +25,15 @@
 <body>
 
     <div class="video-container">
-        <video id="bg-video" preload="auto" muted playsinline webkit-playsinline>
-            <source src="assets/videos/vidu-video-3138115750301514.mp4" type="video/mp4">
+        <video id="bg-video-forward" class="bg-video active" preload="auto" muted playsinline webkit-playsinline>
+            <source src="assets/videos/battlefield.mp4" type="video/mp4">
+        </video>
+        <video id="bg-video-backward" class="bg-video" preload="auto" muted playsinline webkit-playsinline>
+            <source src="assets/videos/battlefield-reverse.mp4" type="video/mp4">
         </video>
         <div class="gradient-overlay"></div>
     </div>
 
-    <div id="language-modal" class="modal-overlay hidden">
-        <div class="modal-content glass-panel fade-in-scale">
-            <h2 class="modal-title">Select Localization</h2>
-            <div class="lang-options">
-                <button class="lang-btn" data-lang="ru">
-                    <span class="flag">🇷🇺</span> RU
-                </button>
-                <button class="lang-btn" data-lang="ua">
-                    <span class="flag">🇺🇦</span> UA
-                </button>
-                <button class="lang-btn" data-lang="en">
-                    <span class="flag">🇺🇸</span> EN
-                </button>
-            </div>
-        </div>
-    </div>
 
     <header class="glass-header">
         <div class="container nav-container">
@@ -59,9 +46,9 @@
                 <a href="#cta" class="btn-primary glow-effect" data-i18n="nav_start">Начать Сейчас</a>
             </nav>
             <div class="header-lang-switcher">
-                <button class="header-lang-btn" data-lang="ru">RU</button>
                 <button class="header-lang-btn" data-lang="ua">UA</button>
                 <button class="header-lang-btn" data-lang="en">EN</button>
+                <button class="header-lang-btn" data-lang="ru">RU</button>
             </div>
         </div>
     </header>

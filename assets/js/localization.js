@@ -68,7 +68,7 @@ const translations = {
         "feature_4_title": "Армія Персонажів",
         "feature_4_desc": "Запускайте 5, 10 або 20 вікон. Спостерігайте за всією армією через одну зручну панель керування.",
         "integration_title_prefix": "Інтелектуальне",
-        "integration_title_suffix": "Реагування",
+        "integration_title_suffix": "Реагирование",
         "integration_item_1_title": "Миттєва реакція",
         "integration_item_1_desc": "Спрацювання за частки секунди після будь-якої події.",
         "integration_item_2_title": "Розумний рандом",
@@ -182,6 +182,15 @@ function setLanguage(lang) {
     if (ctaTitle && t.cta_title_prefix && t.cta_title_suffix) {
         ctaTitle.innerHTML = `${t.cta_title_prefix} <span class="accent-text">${t.cta_title_suffix}</span>${t.cta_title_end ? ' ' + t.cta_title_end : ''}`;
     }
+
+    // Update active class on header buttons
+    document.querySelectorAll('.header-lang-btn').forEach(btn => {
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
 }
 
 // Browser detection
@@ -196,36 +205,13 @@ function detectLanguage() {
 
 // Init
 document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById('language-modal');
     const savedLang = localStorage.getItem('selectedLanguage');
 
     // Function to handle language selection
     const handleSelection = (lang) => {
         localStorage.setItem('selectedLanguage', lang);
         setLanguage(lang);
-
-        // Hide modal if it exists
-        if (modal) {
-            modal.classList.add('hidden');
-        }
-
-        // Update active class on header buttons
-        document.querySelectorAll('.header-lang-btn').forEach(btn => {
-            if (btn.getAttribute('data-lang') === lang) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
-        });
     };
-
-    // Add listeners to modal buttons
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const lang = btn.getAttribute('data-lang');
-            handleSelection(lang);
-        });
-    });
 
     // Add listeners to header buttons
     document.querySelectorAll('.header-lang-btn').forEach(btn => {
@@ -236,21 +222,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     if (savedLang) {
-        handleSelection(savedLang);
+        setLanguage(savedLang);
     } else {
-        // No saved language, explicitly show modal
-        if (modal) {
-            modal.classList.remove('hidden');
-        }
-        // Also detect and set a default while modal is open
         const lang = detectLanguage();
-        // Don't call handleSelection yet, let the user decide, but set initial state
         setLanguage(lang);
-        document.querySelectorAll('.header-lang-btn').forEach(btn => {
-            if (btn.getAttribute('data-lang') === lang) {
-                btn.classList.add('active');
-            }
-        });
     }
 });
 
