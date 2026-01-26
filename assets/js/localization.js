@@ -196,8 +196,62 @@ function detectLanguage() {
 
 // Init
 document.addEventListener('DOMContentLoaded', () => {
-    const lang = detectLanguage();
-    setLanguage(lang);
+    const modal = document.getElementById('language-modal');
+    const savedLang = localStorage.getItem('selectedLanguage');
+
+    // Function to handle language selection
+    const handleSelection = (lang) => {
+        localStorage.setItem('selectedLanguage', lang);
+        setLanguage(lang);
+
+        // Hide modal if it exists
+        if (modal) {
+            modal.classList.add('hidden');
+        }
+
+        // Update active class on header buttons
+        document.querySelectorAll('.header-lang-btn').forEach(btn => {
+            if (btn.getAttribute('data-lang') === lang) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    };
+
+    // Add listeners to modal buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            handleSelection(lang);
+        });
+    });
+
+    // Add listeners to header buttons
+    document.querySelectorAll('.header-lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            handleSelection(lang);
+        });
+    });
+
+    if (savedLang) {
+        handleSelection(savedLang);
+    } else {
+        // No saved language, explicitly show modal
+        if (modal) {
+            modal.classList.remove('hidden');
+        }
+        // Also detect and set a default while modal is open
+        const lang = detectLanguage();
+        // Don't call handleSelection yet, let the user decide, but set initial state
+        setLanguage(lang);
+        document.querySelectorAll('.header-lang-btn').forEach(btn => {
+            if (btn.getAttribute('data-lang') === lang) {
+                btn.classList.add('active');
+            }
+        });
+    }
 });
 
 // Export for debugging

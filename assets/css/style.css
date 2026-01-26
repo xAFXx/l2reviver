@@ -17,13 +17,13 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
-    height: 100vh;
-    overflow-y: scroll;
+    height: auto;
+    overflow-y: auto;
+    background-color: var(--bg-color);
 }
 
 body {
-    background-color: var(--bg-color);
+    background-color: transparent;
     color: var(--text-color);
     font-family: var(--font-main);
     line-height: 1.6;
@@ -83,6 +83,7 @@ h3,
 .gradient-text {
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -109,6 +110,12 @@ h3,
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
+}
+
+.logo-link {
+    text-decoration: none;
+    display: inline-block;
 }
 
 .logo {
@@ -178,7 +185,6 @@ nav a:hover {
     padding-top: 80px;
     position: relative;
     overflow: hidden;
-    scroll-snap-align: start;
 }
 
 .hero-content {
@@ -211,7 +217,6 @@ nav a:hover {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    scroll-snap-align: start;
 }
 
 .section-title {
@@ -266,7 +271,6 @@ nav a:hover {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    scroll-snap-align: start;
 }
 
 .flex-row {
@@ -375,13 +379,52 @@ nav a:hover {
     color: var(--secondary-color);
 }
 
+/* Header Language Switcher */
+.header-lang-switcher {
+    display: flex;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px;
+    border-radius: 6px;
+    border: 1px solid var(--glass-border);
+}
+
+.header-lang-btn {
+    background: transparent;
+    border: none;
+    color: #a0a0a0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-heading);
+}
+
+.header-lang-btn:hover {
+    color: white;
+}
+
+.header-lang-btn.active {
+    background: var(--primary-color);
+    color: #050508;
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.4);
+}
+
+@media (max-width: 992px) {
+    .header-lang-switcher {
+        display: none;
+        /* Hide on smaller screens to save space */
+    }
+}
+
 /* CTA Section */
 .cta-section {
     padding: 100px 0;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    scroll-snap-align: start;
 }
 
 .cta-box {
@@ -414,6 +457,92 @@ footer {
     text-align: center;
     border-top: 1px solid var(--glass-border);
     color: #666;
+}
+
+/* Language Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    transition: opacity 0.5s ease, visibility 0.5s;
+}
+
+.modal-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.modal-content {
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0, 242, 255, 0.2);
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.lang-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.lang-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.lang-btn:hover {
+    background: rgba(0, 242, 255, 0.15);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 242, 255, 0.2);
+}
+
+.flag {
+    font-size: 1.4rem;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fade-in-scale {
+    animation: fadeInScale 0.5s ease-out forwards;
 }
 
 /* Animations */

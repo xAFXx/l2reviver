@@ -31,20 +31,43 @@
         <div class="gradient-overlay"></div>
     </div>
 
+    <div id="language-modal" class="modal-overlay hidden">
+        <div class="modal-content glass-panel fade-in-scale">
+            <h2 class="modal-title">Select Localization</h2>
+            <div class="lang-options">
+                <button class="lang-btn" data-lang="ru">
+                    <span class="flag">🇷🇺</span> RU
+                </button>
+                <button class="lang-btn" data-lang="ua">
+                    <span class="flag">🇺🇦</span> UA
+                </button>
+                <button class="lang-btn" data-lang="en">
+                    <span class="flag">🇺🇸</span> EN
+                </button>
+            </div>
+        </div>
+    </div>
+
     <header class="glass-header">
         <div class="container nav-container">
-            <div class="logo">L2Reviver<span class="accent-text">Bot</span></div>
+            <a href="#hero-section" class="logo-link">
+                <div class="logo">L2Reviver<span class="accent-text">Bot</span></div>
+            </a>
             <nav>
                 <a href="#features" class="nav-link" data-i18n="nav_features">Возможности</a>
                 <a href="#integration" class="nav-link" data-i18n="nav_integration">Интеграция</a>
-                <a href="#advantages" class="nav-link" data-i18n="nav_advantages">Преимущества</a>
+                <a href="#cta" class="btn-primary glow-effect" data-i18n="nav_start">Начать Сейчас</a>
             </nav>
-            <a href="#" class="btn-primary glow-effect" data-i18n="nav_start">Начать Сейчас</a>
+            <div class="header-lang-switcher">
+                <button class="header-lang-btn" data-lang="ru">RU</button>
+                <button class="header-lang-btn" data-lang="ua">UA</button>
+                <button class="header-lang-btn" data-lang="en">EN</button>
+            </div>
         </div>
     </header>
 
     <main>
-        <section class="hero-section">
+        <section id="hero-section" class="hero-section">
             <div class="container hero-content">
                 <h1 class="hero-title fade-in-up">Твой идеальный помощник в мире <span class="gradient-text">Lineage
                         2</span></h1>
@@ -171,6 +194,7 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/7.8.1/rxjs.umd.min.js"></script>
     <script src="assets/js/video-scroll.js"></script>
     <script src="assets/js/localization.js"></script>
 </body>
