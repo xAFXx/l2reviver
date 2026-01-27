@@ -674,6 +674,7 @@ nav a:hover {
 
 .modal-title {
     font-size: 2rem;
+    margin-top: 2.5rem;
     margin-bottom: 2.5rem;
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
@@ -698,14 +699,20 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    justify-content: center;
+    gap: 1.2rem;
     text-decoration: none;
-    padding: 2rem !important;
+    padding: 2.5rem 2rem !important;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    min-height: 180px;
 }
 
 .download-btn .icon {
     font-size: 3rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.3));
 }
 
@@ -743,7 +750,9 @@ nav a:hover {
     font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.3rem;
+    line-height: 1;
+    height: 32px;
 }
 
 .modal-back:hover {
