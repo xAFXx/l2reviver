@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Страница не найдена | L2ReviverBot</title>
+    <meta name="description" content="Страница не найдена. Вернитесь на главную страницу L2ReviverBot.">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <style>
+        .hero-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .bg-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .error-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .error-content {
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .error-code {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(4rem, 15vw, 10rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #00d4ff 0%, #7b2ff7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+            line-height: 1;
+            text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+        }
+
+        .error-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            color: #ffffff;
+            margin: 1.5rem 0;
+        }
+
+        .error-text {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .glitch-effect {
+            animation: glitch 3s infinite;
+        }
+
+        @keyframes glitch {
+
+            0%,
+            90%,
+            100% {
+                transform: translate(0);
+            }
+
+            92% {
+                transform: translate(-2px, 2px);
+            }
+
+            94% {
+                transform: translate(2px, -2px);
+            }
+
+            96% {
+                transform: translate(-2px, -2px);
+            }
+
+            98% {
+                transform: translate(2px, 2px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero-background">
+        <picture>
+            <source media="(max-width: 755.99px)" srcset="assets/images/hero-bg-2.jpg">
+            <source media="(min-width: 756px)" srcset="assets/images/hero-bg-2.jpg">
+            <img src="assets/images/hero-bg-2.jpg" alt="Background" class="bg-image">
+        </picture>
+        <div class="gradient-overlay"></div>
+    </div>
+
+    <header class="glass-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <div class="logo"><span class="accent-text">L2</span>Reviver<span
+                        class="secondary-accent-text">Bot</span></div>
+            </a>
+            <nav>
+                <a href="index.html#features" class="nav-link" data-i18n="nav_features">Возможности</a>
+                <a href="index.html#integration" class="nav-link" data-i18n="nav_integration">Интеграция</a>
+                <a href="index.html#cta" class="btn-primary glow-effect" data-i18n="nav_start">Начать
+                    Сейчас</a>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="header-lang-switcher">
+                <button class="header-lang-btn" data-lang="ua">UA</button>
+                <button class="header-lang-btn" data-lang="en">EN</button>
+                <button class="header-lang-btn" data-lang="ru">RU</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <button class="mobile-menu-close">&times;</button>
+        <nav class="mobile-nav">
+            <a href="index.html#features" class="mobile-nav-link" data-i18n="nav_features">Возможности</a>
+            <a href="index.html#integration" class="mobile-nav-link" data-i18n="nav_integration">Интеграция</a>
+            <a href="index.html#cta" class="mobile-nav-link" data-i18n="nav_start">Начать Сейчас</a>
+            <div class="mobile-lang-switcher">
+                <button class="header-lang-btn" data-lang="ua">UA</button>
+                <button class="header-lang-btn" data-lang="en">EN</button>
+                <button class="header-lang-btn" data-lang="ru">RU</button>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <section class="error-section">
+            <div class="error-content">
+                <div class="glass-panel" style="padding: 3rem 2rem; border-radius: 20px;">
+                    <h1 class="error-code glitch-effect">404</h1>
+                    <h2 class="error-title">Страница не найдена</h2>
+                    <p class="error-text">
+                        К сожалению, запрашиваемая страница не существует или была перемещена.
+                        Вернитесь на главную страницу или свяжитесь с нами, если считаете, что это ошибка.
+                    </p>
+                    <div class="error-actions">
+                        <a href="index.html" class="btn-primary btn-large glow-effect">На главную</a>
+                        <a href="index.html#cta" class="btn-secondary btn-large">Связаться с нами</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo-small"><span class="accent-text">L2</span>Reviver<span
+                        class="secondary-accent-text">Bot</span></div>
+                <p class="copyright" data-i18n="footer_rights">&copy; 2026 L2ReviverBot. All rights reserved.</p>
+            </div>
+
+            <div class="footer-block">
+                <h4 data-i18n="footer_contacts">Контакты</h4>
+                <ul class="footer-links">
+                    <li><a href="#" id="footer-telegram-link" target="_blank"><span class="icon">✈️</span> <span
+                                data-i18n="footer_telegram">Наш Telegram</span></a></li>
+                    <li><a href="#" id="footer-support-link" target="_blank"><span class="icon">💬</span> <span
+                                data-i18n="footer_support">Техподдержка</span></a></li>
+                    <li><a href="#" id="footer-discord-link" target="_blank"><span class="icon">🎮</span> <span
+                                data-i18n="footer_discord">Наш Discord</span></a></li>
+                    <li><a href="#" id="footer-email-link"><span class="icon">📧</span> <span
+                                data-i18n="footer_email">Наш Email</span></a></li>
+                </ul>
+            </div>
+
+            <div class="footer-block">
+                <h4 data-i18n="footer_donation">Донат</h4>
+                <p class="donation-text" data-i18n="footer_donation_desc">Поддержите развитие проекта Л2</p>
+                <div class="donation-box">
+                    <div class="crypto-addr" title="Click to copy">
+                        <span class="crypto-label">USDT (TRC20):</span>
+                        <code id="footer-donation-addr">TExexampleAddressPlaceholder12345</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/7.8.1/rxjs.umd.min.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/localization.js"></script>
+</body>
+
+</html>

@@ -143,7 +143,40 @@
    MOBILE RESPONSIVE (<768px)
    ======================================== */
 
+@media (max-width: 755.99px) {
+
+    /* Hide videos and show static background on mobile */
+    .video-container .bg-video {
+        display: none !important;
+    }
+
+    .mobile-bg-picture {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    .mobile-bg-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+@media (min-width: 756px) {
+
+    /* Hide mobile background on desktop */
+    .mobile-bg-picture {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
+
 
     /* Navigation */
     .nav-container nav {

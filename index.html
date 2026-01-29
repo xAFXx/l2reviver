@@ -2,16 +2,25 @@
 <html lang="ru">
 
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-K5XJKK3N');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L2ReviverBot | Твой идеальный помощник в Lineage 2</title>
     <meta name="description"
         content="L2ReviverBot — революционная платформа для полной автоматизации вашего игрового процесса в Lineage 2 через Telegram.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@500;700;900&display=swap"
-        rel="stylesheet">
+    <link rel="canonical" href="https://l2reviver.net/">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -35,8 +44,17 @@
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5XJKK3N" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
+    <!-- Background: Image for mobile, Video for desktop -->
     <div class="video-container">
+        <picture class="mobile-bg-picture">
+            <source media="(max-width: 755.99px)" srcset="assets/images/hero-bg-2.jpg">
+            <img src="assets/images/hero-bg-2.jpg" alt="" class="mobile-bg-image">
+        </picture>
         <video id="bg-video-forward" class="bg-video active" preload="auto" muted playsinline webkit-playsinline>
             <source src="assets/videos/battlefield.mp4" type="video/mp4">
         </video>
@@ -47,50 +65,53 @@
     </div>
 
 
-    <header class="glass-header">
+    <header class="glass-header" role="banner">
         <div class="container nav-container">
-            <a href="#hero-section" class="logo-link">
+            <a href="#hero-section" class="logo-link" aria-label="L2ReviverBot - На главную">
                 <div class="logo"><span class="accent-text">L2</span>Reviver<span
                         class="secondary-accent-text">Bot</span></div>
             </a>
-            <nav>
-                <a href="#features" class="nav-link" data-i18n="nav_features">Возможности</a>
-                <a href="#integration" class="nav-link" data-i18n="nav_integration">Интеграция</a>
-                <a href="#cta" class="btn-primary glow-effect open-download-modal" data-i18n="nav_start">Начать
+            <nav class="site-navigation" aria-label="Основное меню сайта"
+                itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope">
+                <a href="#features" class="nav-link" data-i18n="nav_features" itemprop="url">Возможности</a>
+                <a href="#integration" class="nav-link" data-i18n="nav_integration" itemprop="url">Интеграция</a>
+                <a href="#cta" class="btn-primary glow-effect open-download-modal" data-i18n="nav_start"
+                    itemprop="url">Начать
                     Сейчас</a>
             </nav>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <button class="mobile-menu-toggle" aria-label="Открыть меню навигации" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <div class="header-lang-switcher">
-                <button class="header-lang-btn" data-lang="ua">UA</button>
-                <button class="header-lang-btn" data-lang="en">EN</button>
-                <button class="header-lang-btn" data-lang="ru">RU</button>
+            <div class="header-lang-switcher" role="group" aria-label="Выбор языка">
+                <button class="header-lang-btn" data-lang="ua" aria-label="Українська мова">UA</button>
+                <button class="header-lang-btn" data-lang="en" aria-label="English language">EN</button>
+                <button class="header-lang-btn" data-lang="ru" aria-label="Русский язык" aria-current="true">RU</button>
             </div>
         </div>
     </header>
 
     <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay">
-        <button class="mobile-menu-close">&times;</button>
-        <nav class="mobile-nav">
+    <div class="mobile-menu-overlay" role="dialog" aria-modal="true" aria-label="Мобильное меню">
+        <button class="mobile-menu-close" aria-label="Закрыть меню">&times;</button>
+        <nav class="mobile-nav" aria-label="Мобильная навигация">
             <a href="#features" class="mobile-nav-link" data-i18n="nav_features">Возможности</a>
             <a href="#integration" class="mobile-nav-link" data-i18n="nav_integration">Интеграция</a>
             <a href="#cta" class="mobile-nav-link open-download-modal" data-i18n="nav_start">Начать Сейчас</a>
-            <div class="mobile-lang-switcher">
-                <button class="header-lang-btn" data-lang="ua">UA</button>
-                <button class="header-lang-btn" data-lang="en">EN</button>
-                <button class="header-lang-btn" data-lang="ru">RU</button>
+            <div class="mobile-lang-switcher" role="group" aria-label="Выбор языка">
+                <button class="header-lang-btn" data-lang="ua" aria-label="Українська мова">UA</button>
+                <button class="header-lang-btn" data-lang="en" aria-label="English language">EN</button>
+                <button class="header-lang-btn" data-lang="ru" aria-label="Русский язык">RU</button>
             </div>
         </nav>
     </div>
 
-    <main>
-        <section id="hero-section" class="hero-section">
+    <main role="main">
+        <section id="hero-section" class="hero-section" aria-labelledby="hero-title">
             <div class="container hero-content">
-                <h1 class="hero-title fade-in-up">Твой идеальный помощник в мире <span class="gradient-text">Lineage
+                <h1 id="hero-title" class="hero-title fade-in-up">Твой идеальный помощник в мире <span
+                        class="gradient-text">Lineage
                         2</span></h1>
                 <p class="hero-subtitle fade-in-up delay-1" data-i18n="hero_subtitle">
                     Полная автоматизация игрового процесса через Telegram. Забудьте о рутине — доверьте фарм
@@ -98,58 +119,61 @@
                 </p>
                 <div class="hero-actions fade-in-up delay-2">
                     <a href="#" class="btn-primary btn-large glow-effect open-download-modal"
-                        data-i18n="hero_btn_primary">Попробовать
+                        data-i18n="hero_btn_primary" aria-label="Попробовать L2ReviverBot бесплатно">Попробовать
                         Бесплатно</a>
-                    <a href="#features" class="btn-secondary btn-large" data-i18n="hero_btn_secondary">Узнать Больше</a>
+                    <a href="#features" class="btn-secondary btn-large" data-i18n="hero_btn_secondary"
+                        aria-label="Узнать больше о возможностях">Узнать Больше</a>
                 </div>
             </div>
         </section>
 
-        <section id="features" class="features-section">
+        <section id="features" class="features-section" aria-labelledby="features-title">
             <div class="container">
-                <h2 class="section-title text-center">Безграничные <span class="accent-text">Возможности</span></h2>
-                <div class="features-grid">
-                    <div class="feature-card glass-panel">
-                        <div class="icon-box">🌐</div>
+                <h2 id="features-title" class="section-title text-center">Безграничные <span
+                        class="accent-text">Возможности</span></h2>
+                <div class="features-grid" role="list">
+                    <article class="feature-card glass-panel" role="listitem">
+                        <div class="icon-box" aria-hidden="true">🌐</div>
                         <h3 data-i18n="feature_1_title">Любой Сервер</h3>
                         <p data-i18n="feature_1_desc">Поддержка любого сервера с Telegram-ботом. Мы понимаем язык
                             игровых серверов так же хорошо,
                             как и вы.</p>
-                    </div>
-                    <div class="feature-card glass-panel">
-                        <div class="icon-box">⚡</div>
+                    </article>
+                    <article class="feature-card glass-panel" role="listitem">
+                        <div class="icon-box" aria-hidden="true">⚡</div>
                         <h3 data-i18n="feature_2_title">Быстрая Интеграция</h3>
                         <p data-i18n="feature_2_desc">Подключение нового сервера занимает всего 1-2 часа. Полная
                             настройка и боевое тестирование.
                         </p>
-                    </div>
-                    <div class="feature-card glass-panel">
-                        <div class="icon-box">🤖</div>
+                    </article>
+                    <article class="feature-card glass-panel" role="listitem">
+                        <div class="icon-box" aria-hidden="true">🤖</div>
                         <h3 data-i18n="feature_3_title">Автоматизация 24/7</h3>
                         <p data-i18n="feature_3_desc">Авто-резурекшн, возврат на спот, умный выбор телепорта. Бот
                             работает, пока вы отдыхаете.</p>
-                    </div>
-                    <div class="feature-card glass-panel">
-                        <div class="icon-box">⚔️</div>
+                    </article>
+                    <article class="feature-card glass-panel" role="listitem">
+                        <div class="icon-box" aria-hidden="true">⚔️</div>
                         <h3 data-i18n="feature_4_title">Армия Персонажей</h3>
                         <p data-i18n="feature_4_desc">Запускайте 5, 10 или 20 окон. Наблюдайте за всей армией через одну
                             удобную панель управления.
                         </p>
-                    </div>
-                    <div class="feature-card glass-panel">
-                        <div class="icon-box">🛡️</div>
+                    </article>
+                    <article class="feature-card glass-panel" role="listitem">
+                        <div class="icon-box" aria-hidden="true">🛡️</div>
                         <h3 data-i18n="feature_5_title">Безопасность</h3>
                         <p data-i18n="feature_5_desc">Бот использует только официально разрешённые механизмы доступа,
                             без риска блокировок.</p>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section id="integration" class="integration-section">
+        <section id="integration" class="integration-section" aria-labelledby="integration-title">
             <div class="container flex-row">
                 <div class="text-content">
-                    <h2 class="section-title">Интеллектуальное <span class="gradient-text">Реагирование</span></h2>
+                    <h2 id="integration-title" class="section-title">Интеллектуальное <span
+                            class="gradient-text">Реагирование</span></h2>
                     <ul class="feature-list">
                         <li>
                             <span class="check-icon">✓</span>
@@ -177,8 +201,8 @@
                         </li>
                     </ul>
                 </div>
-                <div class="visual-content glass-panel">
-                    <div class="code-mockup">
+                <div class="visual-content glass-panel" aria-label="Пример лога автоматизации">
+                    <div class="code-mockup" role="region" aria-label="Пример работы бота">
                         <div class="mockup-header"><span class="dot red"></span><span class="dot yellow"></span><span
                                 class="dot green"></span></div>
                         <div class="mockup-body">
@@ -202,21 +226,22 @@
             </div>
         </section>
 
-        <section id="cta" class="cta-section">
+        <section id="cta" class="cta-section" aria-labelledby="cta-title">
             <div class="container text-center">
                 <div class="glass-panel cta-box">
-                    <h2 class="section-title">Начни <span class="accent-text">Доминировать</span> Сегодня</h2>
+                    <h2 id="cta-title" class="section-title">Начни <span class="accent-text">Доминировать</span> Сегодня
+                    </h2>
                     <p class="cta-text" data-i18n="cta_text">L2ReviverBot превращает Lineage 2 из работы в удовольствие.
                         Минимум усилий,
                         максимум профита.</p>
-                    <a href="#" class="btn-primary btn-large glow-effect open-download-modal"
-                        data-i18n="cta_btn">Получить Бот</a>
+                    <a href="#" class="btn-primary btn-large glow-effect open-download-modal" data-i18n="cta_btn"
+                        aria-label="Получить L2ReviverBot">Получить Бот</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="glass-footer">
+    <footer class="glass-footer" role="contentinfo">
         <div class="container footer-grid">
             <div class="footer-brand">
                 <div class="logo-small"><span class="accent-text">L2</span>Reviver<span
@@ -224,19 +249,23 @@
                 <p class="copyright" data-i18n="footer_rights">&copy; 2026 L2ReviverBot. All rights reserved.</p>
             </div>
 
-            <div class="footer-block">
+            <nav class="footer-block" aria-label="Контактные ссылки">
                 <h4 data-i18n="footer_contacts">Контакты</h4>
                 <ul class="footer-links">
-                    <li><a href="#" id="footer-telegram-link" target="_blank"><span class="icon">✈️</span> <span
+                    <li><a href="#" id="footer-telegram-link" target="_blank" rel="noopener noreferrer"
+                            aria-label="Перейти в Telegram канал"><span class="icon" aria-hidden="true">✈️</span> <span
                                 data-i18n="footer_telegram">Наш Telegram</span></a></li>
-                    <li><a href="#" id="footer-support-link" target="_blank"><span class="icon">💬</span> <span
+                    <li><a href="#" id="footer-support-link" target="_blank" rel="noopener noreferrer"
+                            aria-label="Связаться с техподдержкой"><span class="icon" aria-hidden="true">💬</span> <span
                                 data-i18n="footer_support">Техподдержка</span></a></li>
-                    <li><a href="#" id="footer-discord-link" target="_blank"><span class="icon">🎮</span> <span
-                                data-i18n="footer_discord">Наш Discord</span></a></li>
-                    <li><a href="#" id="footer-email-link"><span class="icon">📧</span> <span
-                                data-i18n="footer_email">Наш Email</span></a></li>
+                    <li><a href="#" id="footer-discord-link" target="_blank" rel="noopener noreferrer"
+                            aria-label="Присоединиться к Discord серверу"><span class="icon"
+                                aria-hidden="true">🎮</span> <span data-i18n="footer_discord">Наш Discord</span></a>
+                    </li>
+                    <li><a href="#" id="footer-email-link" aria-label="Отправить письмо на email"><span class="icon"
+                                aria-hidden="true">📧</span> <span data-i18n="footer_email">Наш Email</span></a></li>
                 </ul>
-            </div>
+            </nav>
 
             <div class="footer-block">
                 <h4 data-i18n="footer_donation">Донат</h4>
@@ -257,20 +286,22 @@
     <script src="assets/js/localization.js"></script>
 
     <!-- Download Modal -->
-    <div id="download-modal" class="modal-overlay">
+    <div id="download-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title-main"
+        aria-hidden="true">
         <div class="modal-content glass-panel">
-            <button class="modal-close">&times;</button>
+            <button class="modal-close" aria-label="Закрыть модальное окно">&times;</button>
 
             <!-- Main View -->
             <div class="modal-view" id="modal-main-view">
-                <h2 class="modal-title" data-i18n="modal_title">Выберите платформу</h2>
+                <h2 id="modal-title-main" class="modal-title" data-i18n="modal_title">Выберите платформу</h2>
                 <div class="download-options">
-                    <a href="#" class="download-btn glass-panel">
-                        <span class="icon">💻</span>
+                    <a href="#" class="download-btn glass-panel" aria-label="Скачать для Desktop">
+                        <span class="icon" aria-hidden="true">💻</span>
                         <span data-i18n="modal_desktop">Desktop</span>
                     </a>
-                    <button class="download-btn glass-panel" id="show-mobile-options">
-                        <span class="icon">📱</span>
+                    <button class="download-btn glass-panel" id="show-mobile-options"
+                        aria-label="Показать мобильные платформы">
+                        <span class="icon" aria-hidden="true">📱</span>
                         <span data-i18n="modal_mobile">Android / iOS</span>
                     </button>
                 </div>
@@ -278,15 +309,16 @@
 
             <!-- Mobile Sub-view -->
             <div class="modal-view hidden" id="modal-mobile-view">
-                <button class="modal-back">← <span data-i18n="modal_back">Назад</span></button>
-                <h2 class="modal-title" data-i18n="modal_mobile_title">Выберите платформу</h2>
+                <button class="modal-back" aria-label="Вернуться назад">← <span
+                        data-i18n="modal_back">Назад</span></button>
+                <h2 id="modal-title-mobile" class="modal-title" data-i18n="modal_mobile_title">Выберите платформу</h2>
                 <div class="download-options">
-                    <a href="#" class="download-btn glass-panel">
-                        <span class="icon">🤖</span>
+                    <a href="#" class="download-btn glass-panel" aria-label="Скачать для Android">
+                        <span class="icon" aria-hidden="true">🤖</span>
                         <span data-i18n="modal_android">Android</span>
                     </a>
-                    <a href="#" class="download-btn glass-panel">
-                        <span class="icon">🍎</span>
+                    <a href="#" class="download-btn glass-panel" aria-label="Скачать для iOS">
+                        <span class="icon" aria-hidden="true">🍎</span>
                         <span data-i18n="modal_ios">iOS</span>
                     </a>
                 </div>
