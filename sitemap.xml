@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <!-- English (Default) -->
     <url>
         <loc>https://l2reviver.net/</loc>
         <lastmod>2026-01-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://l2reviver.net/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://l2reviver.net/ru/"/>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://l2reviver.net/ua/"/>
     </url>
+    
+    <!-- Russian -->
     <url>
-        <loc>https://l2reviver.net/#features</loc>
+        <loc>https://l2reviver.net/ru/</loc>
         <lastmod>2026-01-29</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://l2reviver.net/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://l2reviver.net/ru/"/>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://l2reviver.net/ua/"/>
     </url>
+    
+    <!-- Ukrainian -->
     <url>
-        <loc>https://l2reviver.net/#integration</loc>
+        <loc>https://l2reviver.net/ua/</loc>
         <lastmod>2026-01-29</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://l2reviver.net/#cta</loc>
-        <lastmod>2026-01-29</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://l2reviver.net/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://l2reviver.net/ru/"/>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://l2reviver.net/ua/"/>
     </url>
 </urlset>

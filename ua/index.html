@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
     <!-- Google Tag Manager -->
@@ -15,9 +15,9 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L2ReviverBot | Your ideal assistant in Lineage 2</title>
+    <title>L2ReviverBot | Твій ідеальний помічник у Lineage 2</title>
     <meta name="description"
-        content="L2ReviverBot is a revolutionary platform for full automation of your Lineage 2 gameplay via Telegram.">
+        content="L2ReviverBot — революційна платформа для повної автоматизації вашого ігрового процесу в Lineage 2 через Telegram.">
     <link rel="canonical" href="https://l2reviver.net/">
     <link rel="alternate" hreflang="en" href="https://l2reviver.net/">
     <link rel="alternate" hreflang="ru" href="https://l2reviver.net/ru/">
@@ -26,18 +26,18 @@
     <meta name="robots" content="index, follow">
 
     <!-- Preload Critical Fonts -->
-    <link rel="preload" href="assets/fonts/inter-400.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="assets/fonts/orbitron-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/inter-400.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="../assets/fonts/orbitron-700.woff2" as="font" type="font/woff2" crossorigin>
 
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="L2ReviverBot | Lineage 2 Automation">
+    <meta property="og:title" content="L2ReviverBot | Автоматизація Lineage 2">
     <meta property="og:description"
-        content="Forget about routine character checking. Manage an army of accounts via Telegram.">
-    <meta property="og:image" content="assets/images/hero-bg.png">
+        content="Забудьте про рутинну перевірку персонажів. Керуйте армією акаунтів через Telegram.">
+    <meta property="og:image" content="../assets/images/hero-bg.png">
 </head>
 
 <body>
@@ -49,14 +49,14 @@
     <!-- Background: Image for mobile, Video for desktop -->
     <div class="video-container">
         <picture class="mobile-bg-picture">
-            <source media="(max-width: 755.99px)" srcset="assets/images/hero-bg-2.jpg">
-            <img src="assets/images/hero-bg-2.jpg" alt="" class="mobile-bg-image">
+            <source media="(max-width: 755.99px)" srcset="../assets/images/hero-bg-2.jpg">
+            <img src="../assets/images/hero-bg-2.jpg" alt="" class="mobile-bg-image">
         </picture>
         <video id="bg-video-forward" class="bg-video active" preload="none" muted playsinline>
-            <source src="assets/videos/battlefield.mp4" type="video/mp4">
+            <source src="../assets/videos/battlefield.mp4" type="video/mp4">
         </video>
         <video id="bg-video-backward" class="bg-video" preload="none" muted playsinline>
-            <source src="assets/videos/battlefield-reverse.mp4" type="video/mp4">
+            <source src="../assets/videos/battlefield-reverse.mp4" type="video/mp4">
         </video>
         <div class="gradient-overlay"></div>
     </div>
@@ -64,42 +64,42 @@
 
     <header class="glass-header">
         <div class="container nav-container">
-            <a href="#hero-section" class="logo-link" aria-label="L2ReviverBot - Home">
+            <a href="#hero-section" class="logo-link" aria-label="L2ReviverBot - На головну">
                 <div class="logo"><span class="accent-text">L2</span>Reviver<span
                         class="secondary-accent-text">Bot</span></div>
             </a>
-            <nav class="site-navigation" aria-label="Main site menu" itemtype="https://schema.org/SiteNavigationElement"
-                itemscope="itemscope">
-                <a href="#features" class="nav-link" data-i18n="nav_features" itemprop="url">Features</a>
-                <a href="#integration" class="nav-link" data-i18n="nav_integration" itemprop="url">Integration</a>
+            <nav class="site-navigation" aria-label="Основне меню сайту"
+                itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope">
+                <a href="#features" class="nav-link" data-i18n="nav_features" itemprop="url">Можливості</a>
+                <a href="#integration" class="nav-link" data-i18n="nav_integration" itemprop="url">Інтеграція</a>
                 <a href="#cta" class="btn-primary glow-effect open-download-modal" data-i18n="nav_start"
-                    itemprop="url">Start
-                    Now</a>
+                    itemprop="url">Почати
+                    Зараз</a>
             </nav>
-            <button class="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
+            <button class="mobile-menu-toggle" aria-label="Відкрити меню навігації" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <div class="header-lang-switcher" role="group" aria-label="Выбор языка">
-                <a href="ua/index.html" class="header-lang-btn" aria-label="Українська мова">UA</a>
-                <a href="index.html" class="header-lang-btn active" aria-label="English language">EN</a>
-                <a href="ru/index.html" class="header-lang-btn" aria-label="Русский язык">RU</a>
+                <a href="index.html" class="header-lang-btn active" aria-label="Українська мова">UA</a>
+                <a href="../index.html" class="header-lang-btn" aria-label="English language">EN</a>
+                <a href="../ru/index.html" class="header-lang-btn" aria-label="Русский язык">RU</a>
             </div>
         </div>
     </header>
 
     <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay" role="dialog" aria-modal="true" aria-label="Mobile menu">
-        <button class="mobile-menu-close" aria-label="Close menu">&times;</button>
-        <nav class="mobile-nav" aria-label="Mobile navigation">
-            <a href="#features" class="mobile-nav-link" data-i18n="nav_features">Features</a>
-            <a href="#integration" class="mobile-nav-link" data-i18n="nav_integration">Integration</a>
-            <a href="#cta" class="mobile-nav-link open-download-modal" data-i18n="nav_start">Start Now</a>
-            <div class="mobile-lang-switcher" role="group" aria-label="Language selection">
-                <a href="ua/index.html" class="header-lang-btn" aria-label="Українська мова">UA</a>
-                <a href="index.html" class="header-lang-btn active" aria-label="English language">EN</a>
-                <a href="ru/index.html" class="header-lang-btn" aria-label="Русский язык">RU</a>
+    <div class="mobile-menu-overlay" role="dialog" aria-modal="true" aria-label="Мобільне меню">
+        <button class="mobile-menu-close" aria-label="Закрити меню">&times;</button>
+        <nav class="mobile-nav" aria-label="Мобільна навігація">
+            <a href="#features" class="mobile-nav-link" data-i18n="nav_features">Можливості</a>
+            <a href="#integration" class="mobile-nav-link" data-i18n="nav_integration">Інтеграція</a>
+            <a href="#cta" class="mobile-nav-link open-download-modal" data-i18n="nav_start">Почати Зараз</a>
+            <div class="mobile-lang-switcher" role="group" aria-label="Вибір мови">
+                <a href="index.html" class="header-lang-btn active" aria-label="Українська мова">UA</a>
+                <a href="../index.html" class="header-lang-btn" aria-label="English language">EN</a>
+                <a href="../ru/index.html" class="header-lang-btn" aria-label="Русский язык">RU</a>
             </div>
         </nav>
     </div>
@@ -107,62 +107,61 @@
     <main>
         <section id="hero-section" class="hero-section" aria-labelledby="hero-title">
             <div class="container hero-content">
-                <h1 id="hero-title" class="hero-title fade-in-up">Your ideal assistant in the world of <span
+                <h1 id="hero-title" class="hero-title fade-in-up">Твій ідеальний помічник у світі <span
                         class="gradient-text">Lineage
                         2</span></h1>
                 <p class="hero-subtitle fade-in-up delay-1" data-i18n="hero_subtitle">
-                    Full gameplay automation via Telegram. Forget the routine — trust the farming to professional
-                    software.
+                    Повна автоматизація ігрового процесу через Telegram. Забудьте про рутину — довірте фарм професійному
+                    рішенню.
                 </p>
                 <div class="hero-actions fade-in-up delay-2">
                     <a href="#" class="btn-primary btn-large glow-effect open-download-modal"
-                        data-i18n="hero_btn_primary" aria-label="Try L2ReviverBot for free">Try For
-                        Free</a>
+                        data-i18n="hero_btn_primary" aria-label="Спробувати L2ReviverBot безкоштовно">Спробувати
+                        Безкоштовно</a>
                     <a href="#features" class="btn-secondary btn-large" data-i18n="hero_btn_secondary"
-                        aria-label="Learn more about features">Learn More</a>
+                        aria-label="Дізнатися більше про можливості">Дізнатися Більше</a>
                 </div>
             </div>
         </section>
 
         <section id="features" class="features-section" aria-labelledby="features-title">
             <div class="container">
-                <h2 id="features-title" class="section-title text-center">Limitless <span
-                        class="accent-text">Possibilities</span></h2>
+                <h2 id="features-title" class="section-title text-center">Безмежні <span
+                        class="accent-text">Можливості</span></h2>
                 <div class="features-grid" role="list">
                     <article class="feature-card glass-panel">
                         <div class="icon-box" aria-hidden="true">🌐</div>
-                        <h3 data-i18n="feature_1_title">Any Server</h3>
-                        <p data-i18n="feature_1_desc">Support for any server with a Telegram bot. We understand the
-                            language
-                            of game servers as well as
-                            you do.</p>
+                        <h3 data-i18n="feature_1_title">Будь-який Сервер</h3>
+                        <p data-i18n="feature_1_desc">Підтримка будь-якого сервера з Telegram-ботом. Ми розуміємо мову
+                            ігрових серверів так само добре,
+                            як і ви.</p>
                     </article>
                     <article class="feature-card glass-panel">
                         <div class="icon-box" aria-hidden="true">⚡</div>
-                        <h3 data-i18n="feature_2_title">Fast Integration</h3>
-                        <p data-i18n="feature_2_desc">Connecting a new server takes only 1-2 hours. Full
-                            setup and battle testing.
+                        <h3 data-i18n="feature_2_title">Швидка Інтеграція</h3>
+                        <p data-i18n="feature_2_desc">Підключення нового сервера займає всього 1-2 години. Повне
+                            налаштування та бойове тестування.
                         </p>
                     </article>
                     <article class="feature-card glass-panel">
                         <div class="icon-box" aria-hidden="true">🤖</div>
-                        <h3 data-i18n="feature_3_title">24/7 Automation</h3>
-                        <p data-i18n="feature_3_desc">Auto-resurrection, return to spot, smart teleport selection. The
-                            bot
-                            works while you rest.</p>
+                        <h3 data-i18n="feature_3_title">Автоматизація 24/7</h3>
+                        <p data-i18n="feature_3_desc">Авто-резурекшн, повернення на спот, розумний вибір телепорту. Бот
+                            працює, поки ви відпочиваєте.</p>
                     </article>
                     <article class="feature-card glass-panel">
                         <div class="icon-box" aria-hidden="true">⚔️</div>
-                        <h3 data-i18n="feature_4_title">Army of Characters</h3>
-                        <p data-i18n="feature_4_desc">Launch 5, 10, or 20 windows. Monitor the entire army through one
-                            convenient dashboard.
+                        <h3 data-i18n="feature_4_title">Армія Персонажів</h3>
+                        <p data-i18n="feature_4_desc">Запускайте 5, 10 або 20 вікон. Спостерігайте за всією армією через
+                            одну
+                            зручну панель керування.
                         </p>
                     </article>
                     <article class="feature-card glass-panel">
                         <div class="icon-box" aria-hidden="true">🛡️</div>
-                        <h3 data-i18n="feature_5_title">Legality</h3>
-                        <p data-i18n="feature_5_desc">The bot uses only officially allowed access mechanisms,
-                            which eliminates the risk of bans.</p>
+                        <h3 data-i18n="feature_5_title">Легальність</h3>
+                        <p data-i18n="feature_5_desc">Бот використовує лише офіційно дозволені механізми доступу,
+                            що виключає ризик блокувань.</p>
                     </article>
                 </div>
             </div>
@@ -171,37 +170,37 @@
         <section id="integration" class="integration-section" aria-labelledby="integration-title">
             <div class="container flex-row">
                 <div class="text-content">
-                    <h2 id="integration-title" class="section-title">Intelligent <span
-                            class="gradient-text">Response</span></h2>
+                    <h2 id="integration-title" class="section-title">Інтелектуальне <span
+                            class="gradient-text">Реагирование</span></h2>
                     <ul class="feature-list">
                         <li>
                             <span class="check-icon">✓</span>
                             <div>
-                                <strong data-i18n="integration_item_1_title">Instant Reaction</strong>
-                                <p data-i18n="integration_item_1_desc">Triggering within fractions of a second after any
-                                    event.</p>
+                                <strong data-i18n="integration_item_1_title">Миттєва реакція</strong>
+                                <p data-i18n="integration_item_1_desc">Спрацювання за частки секунди після будь-якої
+                                    події.</p>
                             </div>
                         </li>
                         <li>
                             <span class="check-icon">✓</span>
                             <div>
-                                <strong data-i18n="integration_item_2_title">Smart Random</strong>
-                                <p data-i18n="integration_item_2_desc">Random teleport point selection mimics a real
-                                    player.</p>
+                                <strong data-i18n="integration_item_2_title">Розумний рандом</strong>
+                                <p data-i18n="integration_item_2_desc">Випадковий вибір точок телепорту імітує живого
+                                    гравця.</p>
                             </div>
                         </li>
                         <li>
                             <span class="check-icon">✓</span>
                             <div>
-                                <strong data-i18n="integration_item_3_title">Safety</strong>
-                                <p data-i18n="integration_item_3_desc">Behavior is as close to human as possible.
+                                <strong data-i18n="integration_item_3_title">Безпека</strong>
+                                <p data-i18n="integration_item_3_desc">Поведінка максимально наближена до людської.
                                 </p>
                             </div>
                         </li>
                     </ul>
                 </div>
                 <div class="visual-content glass-panel">
-                    <div class="code-mockup" role="region" aria-label="Bot operation example">
+                    <div class="code-mockup" role="region" aria-label="Приклад роботи бота">
                         <div class="mockup-header"><span class="dot red"></span><span class="dot yellow"></span><span
                                 class="dot green"></span></div>
                         <div class="mockup-body">
@@ -228,13 +227,13 @@
         <section id="cta" class="cta-section" aria-labelledby="cta-title">
             <div class="container text-center">
                 <div class="glass-panel cta-box">
-                    <h2 id="cta-title" class="section-title">Start <span class="accent-text">Dominating</span> Today
+                    <h2 id="cta-title" class="section-title">Почни <span class="accent-text">Домінувати</span> Сьогодні
                     </h2>
-                    <p class="cta-text" data-i18n="cta_text">L2ReviverBot turns Lineage 2 from work into pleasure.
-                        Minimum effort,
-                        maximum profit.</p>
+                    <p class="cta-text" data-i18n="cta_text">L2ReviverBot перетворює Lineage 2 з роботи на задоволення.
+                        Мінімум зусиль,
+                        максимум профіту.</p>
                     <a href="#" class="btn-primary btn-large glow-effect open-download-modal" data-i18n="cta_btn"
-                        aria-label="Get L2ReviverBot">Get Bot</a>
+                        aria-label="Отримати L2ReviverBot">Отримати Бот</a>
                 </div>
             </div>
         </section>
@@ -248,27 +247,27 @@
                 <p class="copyright" data-i18n="footer_rights">&copy; 2026 L2ReviverBot. All rights reserved.</p>
             </div>
 
-            <nav class="footer-block" aria-label="Контактные ссылки">
-                <h3 data-i18n="footer_contacts">Contacts</h3>
+            <nav class="footer-block" aria-label="Контактні посилання">
+                <h3 data-i18n="footer_contacts">Контакти</h3>
                 <ul class="footer-links">
                     <li><a href="#" id="footer-telegram-link" target="_blank" rel="noopener noreferrer"
                             aria-label="Перейти в Telegram канал"><span class="icon" aria-hidden="true">✈️</span> <span
-                                data-i18n="footer_telegram">Our Telegram</span></a></li>
+                                data-i18n="footer_telegram">Наш Telegram</span></a></li>
                     <li><a href="#" id="footer-support-link" target="_blank" rel="noopener noreferrer"
-                            aria-label="Связаться с техподдержкой"><span class="icon" aria-hidden="true">💬</span> <span
-                                data-i18n="footer_support">Support Service</span></a></li>
+                            aria-label="Зв'язатися з техпідтримкою"><span class="icon" aria-hidden="true">💬</span>
+                            <span data-i18n="footer_support">Техпідтримка</span></a></li>
                     <li><a href="#" id="footer-discord-link" target="_blank" rel="noopener noreferrer"
-                            aria-label="Присоединиться к Discord серверу"><span class="icon"
-                                aria-hidden="true">🎮</span> <span data-i18n="footer_discord">Our Discord</span></a>
+                            aria-label="Приєднатися до Discord серверу"><span class="icon" aria-hidden="true">🎮</span>
+                            <span data-i18n="footer_discord">Наш Discord</span></a>
                     </li>
                     <li><a href="#" id="footer-email-link" aria-label="Отправить письмо на email"><span class="icon"
-                                aria-hidden="true">📧</span> <span data-i18n="footer_email">Our Email</span></a></li>
+                                aria-hidden="true">📧</span> <span data-i18n="footer_email">Наш Email</span></a></li>
                 </ul>
             </nav>
 
             <div class="footer-block">
                 <h3 data-i18n="footer_donation">Донат</h3>
-                <p class="donation-text" data-i18n="footer_donation_desc">Support the development of L2 project</p>
+                <p class="donation-text" data-i18n="footer_donation_desc">Підтримайте розвиток проекту Л2</p>
                 <div class="donation-box">
                     <div class="crypto-addr" title="Click to copy">
                         <span class="crypto-label">USDT (TRC20):</span>
@@ -280,7 +279,7 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/7.8.1/rxjs.umd.min.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
+    <script src="../assets/js/main.js" defer></script>
 
 
 
@@ -288,18 +287,18 @@
     <div id="download-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title-main"
         aria-hidden="true">
         <div class="modal-content glass-panel">
-            <button class="modal-close" aria-label="Close modal window">&times;</button>
+            <button class="modal-close" aria-label="Закрити модальне вікно">&times;</button>
 
             <!-- Main View -->
             <div class="modal-view" id="modal-main-view">
-                <h2 id="modal-title-main" class="modal-title" data-i18n="modal_title">Select platform</h2>
+                <h2 id="modal-title-main" class="modal-title" data-i18n="modal_title">Оберіть платформу</h2>
                 <div class="download-options">
-                    <a href="#" class="download-btn glass-panel" aria-label="Download for Desktop">
+                    <a href="#" class="download-btn glass-panel" aria-label="Завантажити для Desktop">
                         <span class="icon" aria-hidden="true">💻</span>
                         <span data-i18n="modal_desktop">Desktop</span>
                     </a>
                     <button class="download-btn glass-panel" id="show-mobile-options"
-                        aria-label="Show mobile platforms">
+                        aria-label="Показати мобільні платформи">
                         <span class="icon" aria-hidden="true">📱</span>
                         <span data-i18n="modal_mobile">Android / iOS</span>
                     </button>
@@ -308,14 +307,15 @@
 
             <!-- Mobile Sub-view -->
             <div class="modal-view hidden" id="modal-mobile-view">
-                <button class="modal-back" aria-label="Go back">← <span data-i18n="modal_back">Back</span></button>
-                <h2 id="modal-title-mobile" class="modal-title" data-i18n="modal_mobile_title">Select platform</h2>
+                <button class="modal-back" aria-label="Повернутися назад">← <span
+                        data-i18n="modal_back">Назад</span></button>
+                <h2 id="modal-title-mobile" class="modal-title" data-i18n="modal_mobile_title">Оберіть платформу</h2>
                 <div class="download-options">
-                    <a href="#" class="download-btn glass-panel" aria-label="Download for Android">
+                    <a href="#" class="download-btn glass-panel" aria-label="Завантажити для Android">
                         <span class="icon" aria-hidden="true">🤖</span>
                         <span data-i18n="modal_android">Android</span>
                     </a>
-                    <a href="#" class="download-btn glass-panel" aria-label="Download for iOS">
+                    <a href="#" class="download-btn glass-panel" aria-label="Завантажити для iOS">
                         <span class="icon" aria-hidden="true">🍎</span>
                         <span data-i18n="modal_ios">iOS</span>
                     </a>
