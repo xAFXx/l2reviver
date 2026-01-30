@@ -26,8 +26,8 @@
     <meta name="robots" content="index, follow">
 
     <!-- Preload Critical Fonts -->
-    <link rel="preload" href="assets/fonts/inter-400.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="assets/fonts/orbitron-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/inter-400.ttf" as="font" type="font/ttf">
+    <link rel="preload" href="assets/fonts/orbitron-700.woff2" as="font" type="font/woff2">
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -52,10 +52,10 @@
             <source media="(max-width: 755.99px)" srcset="assets/images/hero-bg-2.jpg">
             <img src="assets/images/hero-bg-2.jpg" alt="" class="mobile-bg-image">
         </picture>
-        <video id="bg-video-forward" class="bg-video active" preload="none" muted playsinline>
+        <video id="bg-video-forward" class="bg-video active" preload="auto" muted playsinline>
             <source src="assets/videos/battlefield.mp4" type="video/mp4">
         </video>
-        <video id="bg-video-backward" class="bg-video" preload="none" muted playsinline>
+        <video id="bg-video-backward" class="bg-video" preload="auto" muted playsinline>
             <source src="assets/videos/battlefield-reverse.mp4" type="video/mp4">
         </video>
         <div class="gradient-overlay"></div>
